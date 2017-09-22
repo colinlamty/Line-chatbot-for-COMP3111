@@ -4,5 +4,5 @@ I am fine:Great!
 Who is Prof Kim:Well, this is your instructor.
 How is the grade of this course?:This is absolute good grade for good student. And I am sure you are!
 How about this lab?:It is very difficult!
-Bye?:OK! Byebye~
+Bye?:Bye!
 
