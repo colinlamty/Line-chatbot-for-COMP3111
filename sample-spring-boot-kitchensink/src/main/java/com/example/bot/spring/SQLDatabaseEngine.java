@@ -11,8 +11,16 @@ import java.net.URI;
 public class SQLDatabaseEngine extends DatabaseEngine {
 	@Override
 	String search(String text) throws Exception {
+		String result = null;
 		//Write your code here
-		return null;
+		Connection connection = getConnection();
+		PreparedStatement stmt  = connection.prepareStatement("Select response from SQLDatabaseEngine where keyword =?"); 
+		stmt.setString(1, text);
+		ResultSet rs = stmt.executeQuery();
+		if(rs.next()) {
+			result = rs.getString(1);
+		}
+		return result;
 	}
 	
 	
