@@ -16,16 +16,6 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 	String search(String text) throws Exception {
 		String result = null;
 		//Write your code here
-		/*
-		Connection connection = getConnection();
-		PreparedStatement stmt  = connection.prepareStatement("Select response from SQLDatabaseEngine where keyword =?"); 
-		stmt.setString(1, text);
-		ResultSet rs = stmt.executeQuery();
-		if(rs.next()) {
-			result = rs.getString(1);
-		}
-		return result;
-		*/
 		try {
 			Connection connection = getConnection();
 			PreparedStatement stmt  = connection.prepareStatement("Select response from SQLDatabaseEngine where keyword =?"); 
@@ -34,7 +24,7 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 			if(rs.next()) {
 				result = rs.getString(1);
 			}
-		} catch (SQLException e) {
+		} catch (IOException e) {
 			log.info("IOException while reading file: {}", e.toString());
 		} finally {
 			try {
