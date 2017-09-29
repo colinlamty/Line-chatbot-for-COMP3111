@@ -36,14 +36,7 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 			}
 		} catch (SQLException e) {
 			log.info("IOException while reading file: {}", e.toString());
-		} finally {
-			try {
-				if (stmt != null)
-					stmt.close();
-			} catch (SQLException ex) {
-				log.info("IOException while closing file: {}", ex.toString());
-			}
-		}
+		} 
 		if (result != null)
 			return result;
 		throw new Exception("NOT FOUND");
