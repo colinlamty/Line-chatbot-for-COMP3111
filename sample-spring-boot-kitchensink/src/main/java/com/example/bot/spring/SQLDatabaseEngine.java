@@ -34,15 +34,13 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 			if(rs.next()) {
 				result = rs.getString(1);
 			}
-		} catch (IOException e) {
+		} catch (SQLException e) {
 			log.info("IOException while reading file: {}", e.toString());
 		} finally {
 			try {
 				if (stmt != null)
 					stmt.close();
-				if (isr != null)
-					isr.close();
-			} catch (IOException ex) {
+			} catch (SQLException ex) {
 				log.info("IOException while closing file: {}", ex.toString());
 			}
 		}
